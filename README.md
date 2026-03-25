@@ -41,14 +41,23 @@ pip install mujoco numpy matplotlib pynput
 ```
 bodyctrl_msg 位于xmigcs/lib/下
 ```bash
+# ros2 = jazzy
 sudo dpkg -i ros-jazzy*.deb
+# ros2 = humble
+sudo dpkg -i ros-humble*.deb
 ```
 ## 使用方法
 
 ### 异步仿真（支持 ROS2）
 
 ```bash
+# ros2 = jazzy
 source /opt/ros/jazzy/setup.bash
+export ROS_DOMAIN_ID=your_domain_id
+python scripts/simulator_view_asyn.py -m evt2(机器人名称)
+
+# ros2 = humble
+source /opt/ros/humble/setup.bash
 export ROS_DOMAIN_ID=your_domain_id
 python scripts/simulator_view_asyn.py -m evt2(机器人名称)
 ```
